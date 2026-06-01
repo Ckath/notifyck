@@ -115,6 +115,7 @@ draw(Drawable pix, XftFont *font, char *title, char *text)
 	}
 
 	/* draw text */
+	/* either single line if it fits or do inefficient char based reflow */
 	if (ext.width < WIDTH) {
 		XftDrawStringUtf8(draw, &colors[fg], font, x, y, text, len);
 	} else {

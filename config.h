@@ -5,7 +5,7 @@
 #define URGBG "cursorColor"
 #define FONT "dina:size=8"
 
-/* location, size etc */
+/* location, size etc, height is determined based on text at run time */
 #define POSX 0
 #define POSY 1080
 #define WIDTH 1920
