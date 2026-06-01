@@ -7,7 +7,7 @@
 
 /* location, size etc, height is determined based on text at run time */
 #define POSX 0
-#define POSY 1080
+#define POSY 0
 #define WIDTH 1920
 
 /* time to stay open, ignored for urgent */
