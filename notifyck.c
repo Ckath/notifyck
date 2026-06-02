@@ -24,6 +24,22 @@ static XftColor colors[2] = {0, 0};
 static int height = 100;
 
 static void
+strcln(char *s)
+{
+	char tmp[TEXTMAX];
+	/* filter out (some) awful to print stuff */
+	int ii = 0;
+	for (int i = 0; i < strlen(s); ++i) {
+		if (s[i] == '\n') { /* TODO: run into more */
+			continue;
+		}
+		tmp[ii++] = s[i];
+	}
+	tmp[ii] = '\0';
+	strcpy(s, tmp);
+}
+
+static void
 initcolors(char *fgcol, char *bgcol)
 {
 	XrmValue col;
@@ -158,6 +174,7 @@ main(int argc, char *argv[])
 			case 't':
 				title = malloc(strlen(optarg)+1);
 				strcpy(title, optarg);
+				strcln(title);
 				break;
 			case 'h':
 			default:
@@ -173,6 +190,9 @@ main(int argc, char *argv[])
 		strcat(text, argv[i]);
 		strcat(text, " ");
 	}
+
+	/* clear of any weird chars */
+	strcln(text);
 
 	/* init resources */
 	dpy = XOpenDisplay(0);
