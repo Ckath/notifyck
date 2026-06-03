@@ -194,6 +194,13 @@ main(int argc, char *argv[])
 	/* clear of any weird chars */
 	strcln(text);
 
+	/* when no text passed read line from stdin */
+	if (strlen(text) < 1) {
+		char *line = NULL;
+		fread(text, 1, TEXTMAX, stdin);
+		strcln(text);
+	}
+
 	/* init resources */
 	dpy = XOpenDisplay(0);
 	if (!dpy) {
