@@ -106,7 +106,7 @@ usage()
 {
 	fputs("usage: notifyck [-u] [-t title] text\n"\
 			"-u\turgent, no disappearing, urgent coloring\n"\
-			"-t\toptinial title/header\n", stderr);
+			"-t\toptional title/header\n", stderr);
 }
 
 static int

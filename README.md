@@ -1,5 +1,5 @@
 # notifyck
-having broken and messed with everything so much I longer need central/builtin/freedesktop notifications working. I figured I could just make a small util that displays a notification popup without any backend, this is that.
+messed up everything so much I no longer need central/builtin/freedesktop notifications working. so I figured I could just make a small util that displays a notification popup without any backend, this is that.
 
 ## expecations
 what you actually get by using this, realistically
@@ -16,5 +16,5 @@ what you actually get by using this, realistically
 ```
 usage: notifyck [-u] [-t title] text
 -u	urgent, no disappearing, urgent coloring
--t	optinial title/header
+-t	optional title/header
 ```
